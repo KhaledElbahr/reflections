@@ -1,7 +1,31 @@
 What happens when you initialize a repository? Why do you need to do it?
 A hidden file is created called .git which will has a history of all files if  you make commits.
 To track the files you committed in the repository.
+/
+When I create a repository, Git creates a directory vhere it will keep track of all the versions that I save. Creating the repository also lets Git know that I want all the files in this directory to be tracked together, but separately from files in different directories. If I didn't create the repository, Git could create the directory to save the versions in automatically, but it wouldn't know which files I wanted to track together and which I wanted to track separately.
+
 
 How is the staging area different from the working directory and the repository? What value do you think it offers?
-staging area works as intermediate layer between the working directory and the repository, it allows us to make changes such as add/remove files before call commit to repository.
- 
+The staging area works as intermediate layer between the working directory and the repository, it allows us to make changes such as add/remove files before call commit to repository.
+/
+The staging area is an intermediate area where I can add changes before committing them to the repository.  This allows me to add changes to the staging area one-by-one, then commit them all at once, which makes it easier to specify what changes should go into each commit.  That makes the commits more valuable, since the commit history is easier to navigate when I create one commit per logical change.
+
+How can you use the staging area to make sure you have one commit per logical change?
+I can add the files to staging area before commiting without commiting the other.
+/
+If I've made more than one logical change since committing, I can add all the changes affected by the first logical change to the staging area, then commit those without committing the others.
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+- when you want to try a new feature but you also need to have a working demo of your project.
+- when you work with team and want to split tasks on team members you can use branches so each one can make changes on its own branch and then merge the changes into one commit.
+branches help us organize our work, make backups of our work so it is easier to make changes without breaking down what we build. 
+
+How do the diagrams help you visualize the branch structure?
+The diagrams help us to show up commits in each  branch that each branch ends with the most recent commit go back through reach the first commit with no perent.
+
+What is the result of merging two branches together? Why do we represent it in the diagram the way we do?
+when merging two branches together a new commit is created which has all changes from both branches, so merging branch A into branch B  all commits in branch A will be accessible in branch B.
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+Git's automatic merging can save the user a lot of time!  Especially when multiple people are working together, merging everything manually could be very painful.		
+
